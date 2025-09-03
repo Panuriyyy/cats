@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эрмитажные коты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Berold:ital@0;1&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: "Helvetica light", "Helvetica" Arial, sans-serif;
+            background-color: #7C170D;
+            color: #FFF;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #D9A577;
+        }
+        
+        h1 {
+            font-family: 'Berold', serif;
+            font-size: 48px;
+            color: #F2D4AE;
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            font-size: 18px;
+            text-align: center;
+            padding: 20px;
+            background: rgba(217, 165, 119, 0.1);
+            border-radius: 10px;
+        }
+        
+        .cats-container {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+        
+        .cat-card {
+            display: flex;
+            align-items: center;
+            background: rgba(217, 165, 119, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cat-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .cat-info {
+            flex: 1;
+            padding: 30px;
+        }
+        
+        .cat-name {
+            font-family: 'Berold', serif;
+            font-size: 32px;
+            color: #F2D4AE;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #D9A577;
+            padding-bottom: 10px;
+        }
+        
+        .cat-desc {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .cat-duties {
+            font-style: italic;
+            color: #D9A577;
+        }
+        
+        .cat-image {
+            flex: 1;
+            max-width: 400px;
+            padding: 20px;
+        }
+        
+        .cat-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.4s ease;
+        }
+        
+        .cat-image img:hover {
+            transform: scale(1.03);
+        }
+        
+        .left {
+            flex-direction: row;
+        }
+        
+        .right {
+            flex-direction: row-reverse;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 3px solid #D9A577;
+            font-size: 16px;
+            color: #D9A577;
+        }
+        
+        @media (max-width: 900px) {
+            .cat-card {
+                flex-direction: column;
+            }
+            
+            .left, .right {
+                flex-direction: column;
+            }
+            
+            .cat-image {
+                max-width: 100%;
+            }
+            
+            h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Эрмитажные коты</h1>
+            <p>Официальный сайт эрмитажных котов</p>
+        </header>
+        
+        <div class="intro">
+            <p>Эрмитажные коты — это не просто питомцы, а настоящие сотрудники Государственного Эрмитажа. 
+            Они несут важную службу по защите музейных ценностей от грызунов уже более 270 лет. 
+            Каждый кот имеет свой паспорт, ветеринарную карту и официальный статус "квалифицированного специалиста по очистке музейных подвалов от грызунов".</p>
+        </div>
+        
+        <div class="cats-container">
+            <div class="cat-card left">
+                <div class="cat-info">
+                    <h2 class="cat-name">Василий</h2>
+                    <p class="cat-desc">Василий — один из старейших и уважаемых котов Эрмитажа. Он служит в музее уже более 8 лет и прекрасно знает все потайные ходы и закоулки. Обладает спокойным и мудрым характером, часто наставляя younger коллег.</p>
+                    <p class="cat-duties">Обязанности: контроль за состоянием фондохранилищ, обучение молодых котов</p>
+                </div>
+                <div class="cat-image">
+                    <img src="https://i.pinimg.com/736x/4c/c8/bc/4cc8bc55cd92c9a73916c35f1396cf78.jpg" alt="Кот Василий">
+                </div>
+            </div>
+            
+            <div class="cat-card right">
+                <div class="cat-image">
+                    <img src="https://i.pinimg.com/originals/9a/02/b3/9a02b3915532d270fc8d68632334beef.jpg" alt="Кошка Марфа">
+                </div>
+                <div class="cat-info">
+                    <h2 class="cat-name">Марфа</h2>
+                    <p class="cat-desc">Марфа — элегантная кошка с изысканными манерами. Она прибыла в Эрмитаж 5 лет назад и быстро завоевала любовь сотрудников. Особенно хорошо она следит за порядком в залах европейского искусства.</p>
+                    <p class="cat-duties">Обязанности: патрулирование залов европейского искусства, дежурство в вестибюле</p>
+                </div>
+            </div>
+            
+            <div class="cat-card left">
+                <div class="cat-info">
+                    <h2 class="cat-name">Акакий</h2>
+                    <p class="cat-desc">Акакий — молодой и энергичный кот, который присоединился к команде 2 года назад. Несмотря на молодость, он уже проявил себя как отличный охотник. Обладает любознательным характером и часто исследует новые территории.</p>
+                    <p class="cat-duties">Обязанности: охрана новых поступлений, инспекция реставрационных мастерских</p>
+                </div>
+                <div class="cat-image">
+                    <img src="https://s0.rbk.ru/v6_top_pics/media/img/0/73/756142619838730.jpg" alt="Кот Акакий">
+                </div>
+            </div>
+            
+            <div class="cat-card right">
+                <div class="cat-image">
+                    <img src="https://img.ixbt.site/live/topics/preview/00/07/59/78/b992bbd4ef.jpg" alt="Кошка Елизавета">
+                </div>
+                <div class="cat-info">
+                    <h2 class="cat-name">Елизавета</h2>
+                    <p class="cat-desc">Елизавета — царственная особа с безупречными манерами. Она обожает проводить время в залах с тронными креслами и, кажется, считает себя прямой наследницей императорских котов. Работает в Эрмитаже 6 лет.</p>
+                    <p class="cat-duties">Обязанности: представительские функции, прием высоких гостей</p>
+                </div>
+            </div>
+            
+            <div class="cat-card left">
+                <div class="cat-info">
+                    <h2 class="cat-name">Петр</h2>
+                    <p class="cat-desc">Петр — крупный и важный кот, который считает себя главным по восточному крылу. Обладает громким голосом и требовательным характером. Несет службу в Эрмитаже 7 лет и прекрасно знает свои права и обязанности.</p>
+                    <p class="cat-duties">Обязанности: контроль восточного крыла, решение территориальных споров</p>
+                </div>
+                <div class="cat-image">
+                    <img src="https://i.pinimg.com/originals/3c/bc/e6/3cbce6653a5dde57419dd89615ac9eb2.jpg" alt="Кот Петр">
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>© 2025 Государственный Эрмитаж. Все права котохранителей защищены.</p>
+            <p>Сайт создан при поддержке Фонда эрмитажных котов</p>
+        </footer>
+    </div>
+
+    <script>
+        // Анимация появления блоков при прокрутке
+        document.addEventListener('DOMContentLoaded', function() {
+            const catCards = document.querySelectorAll('.cat-card');
+            
+            function checkVisibility() {
+                catCards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    const isVisible = (rect.top <= window.innerHeight * 0.8 && rect.bottom >= 0);
+                    
+                    if (isVisible) {
+                        card.classList.add('visible');
+                    }
+                });
+            }
+            
+            // Проверяем при загрузке и при прокрутке
+            checkVisibility();
+            window.addEventListener('scroll', checkVisibility);
+        });
+    </script>
+</body>
+</html>
